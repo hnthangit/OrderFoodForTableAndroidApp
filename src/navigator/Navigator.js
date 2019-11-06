@@ -25,7 +25,6 @@ const DrawerNavigator = createDrawerNavigator({
     screen: IndexScreen,
     navigationOptions: {
       drawerLabel: 'Màn hình chính',
-      headerStyle: {backgroundColor: '#4C3E54'},
     },
   },
 });

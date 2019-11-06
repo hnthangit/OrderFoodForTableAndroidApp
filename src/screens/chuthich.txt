@@ -1,0 +1,6 @@
+//Flexbox
+Luật 1+2+3= 6
+chia 3 phần tổng lại = 6
+//Text, View
+View = Div
+Text = Span = p

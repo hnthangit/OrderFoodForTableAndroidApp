@@ -24,10 +24,6 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 
-import BillHistoryScreen from './screens/BillHistoryScreen';
-import IndexScreen from './screens/IndexScreen';
-import TableScreen from './screens/TableScreen';
-
 import Navigator from './navigator/Navigator';
 
 class App extends React.Component {
