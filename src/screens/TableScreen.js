@@ -1,12 +1,12 @@
 import React, {Component} from 'react';
 import {Text, View, ScrollView} from 'react-native';
-
+import Table from '../components/table/Table';
 class TableScreen extends Component {
   componentDidMount() {
     //Call api o day
   }
 
-  componentDidUpdate(){
+  componentDidUpdate() {
     //Xu li data sau khi xu li su kien o day
   }
 
@@ -15,12 +15,20 @@ class TableScreen extends Component {
   }
   render() {
     return (
-      <View
-        onTouchStart={handletouch()}
-        style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
+      <View style={{flex: 3, justifyContent: 'center', alignItems: 'center'}}>
         <Text>TableScreen</Text>
         <ScrollView>
-          <Text>List Table</Text>
+          <Table tableName="1" />
+          <Table tableName="1" />
+          <Table tableName="1" />
+          <Table tableName="1" />
+          <Table tableName="1" />
+          <Table tableName="1" />
+          <Table tableName="1" />
+          <Table tableName="1" />
+          <Table tableName="1" />
+          <Table tableName="1" />
+          <Table tableName="1" />
         </ScrollView>
       </View>
     );
