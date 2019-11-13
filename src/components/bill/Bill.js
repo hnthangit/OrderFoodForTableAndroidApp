@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {Text, View, TouchableHighlight} from 'react-native';
-import styles from './Table.style';
-class Table extends Component {
+import styles from './Bill.style';
+class Bill extends Component {
   handlePress() {}
 
   render() {
@@ -15,4 +15,4 @@ class Table extends Component {
   }
 }
 
-export default Table;
+export default Bill;

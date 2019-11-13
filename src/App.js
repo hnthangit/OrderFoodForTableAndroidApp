@@ -24,11 +24,14 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 
-import Navigator from './navigator/Navigator';
+import Navigator from './navigator/SwitchNavigator';
 
 class App extends React.Component {
   render() {
     return <Navigator />;
+    //createSwitchNavigator(RouteConfigs, SwitchNavigatorConfig);
+    //use initial routename for start page
+    //default is drawer navigationrea
   }
 }
 
