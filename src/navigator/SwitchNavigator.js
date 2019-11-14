@@ -1,14 +1,14 @@
-import StackLogin from './StackLogin';
-
 import {createAppContainer, createSwitchNavigator} from 'react-navigation';
 import DrawerNavigator from './DrawerNavigator';
-import AuthLoadingScreen from '../screens/AuthLoadingScreen';
 import LoginScreen from '../screens/LoginScreen';
+import StackNavigator from './StackNavigator';
 const SwitchNavigator = createSwitchNavigator(
   {
     //AuthLoading: AuthLoadingScreen,
+    //Table: StackNavigator,
     App: DrawerNavigator,
     Auth: LoginScreen,
+    
   },
   {
     initialRouteName: 'Auth',

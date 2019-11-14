@@ -12,5 +12,6 @@ export default StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     backgroundColor: '#43a1c9',
+    flex: 1,
   },
 });

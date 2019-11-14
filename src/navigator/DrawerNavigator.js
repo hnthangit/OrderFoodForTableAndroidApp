@@ -4,12 +4,20 @@ import TableScreen from '../screens/TableScreen';
 import OrderFoodScreen from '../screens/OrderFoodScreen';
 import LoginScreen from '../screens/LoginScreen';
 
-import {createAppContainer} from 'react-navigation';
+import TouchMenuIcon from '../components/touchmenuicon/TouchMenuIcon';
 import {createDrawerNavigator} from 'react-navigation-drawer';
+import StackNavigator from './StackNavigator';
 const DrawerNavigator = createDrawerNavigator({
+  IndexScreen: {
+    screen: IndexScreen,
+    navigationOptions: {
+      drawerLabel: 'Màn hình bắt đầu',
+    },
+  },
+
   //Can use name in here but i like label :)
   TableScreen: {
-    screen: TableScreen,
+    screen: StackNavigator,
 
     //Name of item in drawer
     navigationOptions: {
@@ -42,5 +50,17 @@ const DrawerNavigator = createDrawerNavigator({
     },
   },
 });
+
+// const navigationOptionsHeader = ({navigation}) => {
+//   return {
+//     headerRight: (
+//       <Button
+//         onPress={() => navigation.toggleDrawer()}
+//         title="Info"
+//         color="#222"
+//       />
+//     ),
+//   };
+// };
 
 export default DrawerNavigator;

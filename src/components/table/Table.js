@@ -2,17 +2,17 @@ import React, {Component} from 'react';
 import {Text, View, TouchableHighlight} from 'react-native';
 import styles from './Table.style';
 class Table extends Component {
-  handlePress() {}
-
   render() {
     return (
-      <View on style={styles.container}>
-        <TouchableHighlight>
+      <TouchableHighlight
+        onPress={() => this.props.navigation.navigate('OrderFood')}>
+        <View on style={styles.container}>
           <Text>Bàn số {this.props.tableName}</Text>
-        </TouchableHighlight>
-      </View>
+        </View>
+      </TouchableHighlight>
     );
   }
 }
+
 
 export default Table;

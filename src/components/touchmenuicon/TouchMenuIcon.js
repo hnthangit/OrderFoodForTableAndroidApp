@@ -7,7 +7,7 @@ class TouchMenuIcon extends React.Component {
   };
   render() {
     return (
-      <View style={{flexDirection: 'row'}}>
+      <View style={{flexDirection: 'row', alignItems: 'flex-start'}}>
         <TouchableOpacity onPress={this.toggleDrawer.bind(this)}>
           <Image
             source={{
