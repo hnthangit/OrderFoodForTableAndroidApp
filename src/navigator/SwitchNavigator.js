@@ -8,7 +8,6 @@ const SwitchNavigator = createSwitchNavigator(
     //Table: StackNavigator,
     App: DrawerNavigator,
     Auth: LoginScreen,
-    
   },
   {
     initialRouteName: 'Auth',

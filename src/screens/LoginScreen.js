@@ -3,7 +3,6 @@ import {Text, View, ScrollView, Button, AsyncStorage} from 'react-native';
 import Table from '../components/table/Table';
 import {TextInput} from 'react-native-gesture-handler';
 class LoginScreen extends Component {
-
   _signInAsync = async () => {
     await AsyncStorage.setItem('userToken', 'abc');
     this.props.navigation.navigate('App');

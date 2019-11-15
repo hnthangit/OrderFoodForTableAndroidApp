@@ -1,14 +1,18 @@
 import React from 'react';
 import {View, Image} from 'react-native';
 import {TouchableOpacity} from 'react-native-gesture-handler';
+import {DrawerActions} from 'react-navigation-drawer';
 class TouchMenuIcon extends React.Component {
   toggleDrawer = () => {
-    this.props.navigationProps.toggleDrawer();
+    this.props.navigationProps.openDrawer();
   };
   render() {
     return (
-      <View style={{flexDirection: 'row', alignItems: 'flex-start'}}>
-        <TouchableOpacity onPress={this.toggleDrawer.bind(this)}>
+      <View style={{flexDirection: 'row'}}>
+        <TouchableOpacity
+          onPress={this.props.navigation.dispatch(
+            DrawerActions.toggleDrawer(),
+          )}>
           <Image
             source={{
               uri:
