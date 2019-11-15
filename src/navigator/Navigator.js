@@ -4,6 +4,8 @@ import TableScreen from '../screens/TableScreen';
 
 import {createAppContainer} from 'react-navigation';
 import {createDrawerNavigator} from 'react-navigation-drawer';
+import LoginScreen1 from '../screens/LoginScreen';
+import LoginScreen from '../screens/LoginScreen';
 const DrawerNavigator = createDrawerNavigator({
   //Can use name in here but i like label :)
   TableScreen: {
@@ -25,6 +27,12 @@ const DrawerNavigator = createDrawerNavigator({
     screen: IndexScreen,
     navigationOptions: {
       drawerLabel: 'Màn hình chính',
+    },
+  },
+  LoginScreen: {
+    screen: LoginScreen,
+    navigationOptions: {
+      drawerLabel: 'Đăng nhập',
     },
   },
 });
