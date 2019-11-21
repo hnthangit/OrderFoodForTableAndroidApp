@@ -1,20 +1,53 @@
 import OrderFoodScreen from '../screens/OrderFoodScreen';
 import TableInfoScreen from '../screens/TableInfoScreen';
 import {createBottomTabNavigator} from 'react-navigation-tabs';
-const BottomTabNavigator = createBottomTabNavigator({
-  TableInfoScreen: {
-    screen: TableInfoScreen,
-    navigationOptions: {
-      tabBarLabel: 'Chi tiết',
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+import React from 'react';
+const BottomTabNavigator = createBottomTabNavigator(
+  {
+    TableInfoScreen: {
+      screen: TableInfoScreen,
+      navigationOptions: {
+        tabBarLabel: 'Chi tiết',
+        tabBarIcon: ({tintColor}) => (
+          <Icon name="details" type="meterial" color={tintColor} size={24} />
+        ),
+      },
+    },
+    OrderFoodScreen: {
+      screen: OrderFoodScreen,
+      navigationOptions: {
+        tabBarLabel: 'Gọi món',
+        tabBarIcon: ({tintColor}) => (
+          <Icon
+            name="food-fork-drink"
+            type="meterial"
+            color={tintColor}
+            size={24}
+          />
+        ),
+      },
     },
   },
-
-  OrderFoodScreen: {
-    screen: OrderFoodScreen,
+  {
+    //router config
+    initialRouteName: 'TableInfoScreen', // screen hiện đầu tiên
+    //order: ['TableInfoScreen'],
+    //navigation for complete tag navigator
     navigationOptions: {
-      tabBarLabel: 'Gọi món',
+      tabBarVisible: true, // ẩn/ hiện menu bottom
+    },
+    tabBarOptions: {
+      activeTintColor: 'red',
+      inactiveTintColor: 'gray',
+      style: {
+        backgroundColor: 'white',
+        borderWidth: 0,
+        shadowOffset: {width: 10, height: 5},
+        shadowOpacity: 0,
+        elevation: 5,
+      },
     },
   },
-});
-
+);
 export default BottomTabNavigator;

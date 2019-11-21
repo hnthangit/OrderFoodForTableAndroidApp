@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React from 'react';
 import TableScreen from '../screens/TableScreen';
 import BottomNavigator from '../navigator/BottomTabNavigator';
 import BillHistoryScreen from '../screens/BillHistoryScreen';
@@ -14,6 +14,7 @@ export const StackNavigator = createStackNavigator(
       screen: TableScreen,
       navigationOptions: ({navigation}) => ({
         title: 'Bàn',
+        headerTintColor: 'blue',
         headerLeft: (
           <Icon
             size={33}
@@ -28,6 +29,7 @@ export const StackNavigator = createStackNavigator(
     OrderFood: {
       screen: BottomNavigator,
       navigationOptions: {
+        headerTintColor: 'blue',
         title: 'Thông tin bàn',
       },
     },
@@ -54,6 +56,7 @@ export const BillHistoryStack = createStackNavigator({
     screen: BillHistoryScreen,
     navigationOptions: ({navigation}) => ({
       title: 'Lịch sử hóa đơn',
+      headerTintColor: 'blue',
       headerLeft: (
         // <View style={{marginRight:0}}>
         //   <TouchableOpacity
@@ -86,6 +89,7 @@ export const IndexStack = createStackNavigator({
     screen: IndexScreen,
     navigationOptions: ({navigation}) => ({
       title: 'Màn hình chính',
+      headerTintColor: 'blue',
       headerLeft: (
         <Icon
           size={33}

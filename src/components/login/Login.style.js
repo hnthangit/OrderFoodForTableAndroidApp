@@ -16,7 +16,7 @@ export default StyleSheet.create({
   },
 
   thridContainer: {
-    flex: 5,
+    flex: 3,
 
     marginLeft: 10,
 
