@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React from 'react';
 import {ActivityIndicator, View, StatusBar} from 'react-native';
 import AsyncStorage from '@react-native-community/async-storage';
 class AuthLoadingScreen extends React.Component {
