@@ -13,7 +13,12 @@ export default StyleSheet.create({
   },
 
   thridContainer: {
+<<<<<<< HEAD
     flex: 5,
+=======
+    flex: 3,
+
+>>>>>>> b0fd236c6216d64a562b4d2b2fc40d9ac25c7a74
     marginLeft: 10,
     marginRight: 10,
     marginTop: 5,

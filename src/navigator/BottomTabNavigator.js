@@ -2,7 +2,12 @@ import React from 'react';
 import OrderFoodScreen from '../screens/OrderFoodScreen';
 import TableInfoScreen from '../screens/TableInfoScreen';
 import {createBottomTabNavigator} from 'react-navigation-tabs';
+<<<<<<< HEAD
 import {Icon} from 'react-native-elements';
+=======
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+import React from 'react';
+>>>>>>> b0fd236c6216d64a562b4d2b2fc40d9ac25c7a74
 const BottomTabNavigator = createBottomTabNavigator(
   {
     TableInfoScreen: {
@@ -10,6 +15,7 @@ const BottomTabNavigator = createBottomTabNavigator(
       navigationOptions: {
         tabBarLabel: 'Chi tiết',
         tabBarIcon: ({tintColor}) => (
+<<<<<<< HEAD
           <Icon name="details" type="material" color={tintColor} size={24} />
         ),
       },
@@ -29,6 +35,26 @@ const BottomTabNavigator = createBottomTabNavigator(
         ),
       },
     },
+=======
+          <Icon name="details" type="meterial" color={tintColor} size={24} />
+        ),
+      },
+    },
+    OrderFoodScreen: {
+      screen: OrderFoodScreen,
+      navigationOptions: {
+        tabBarLabel: 'Gọi món',
+        tabBarIcon: ({tintColor}) => (
+          <Icon
+            name="food-fork-drink"
+            type="meterial"
+            color={tintColor}
+            size={24}
+          />
+        ),
+      },
+    },
+>>>>>>> b0fd236c6216d64a562b4d2b2fc40d9ac25c7a74
   },
   {
     //router config
@@ -51,5 +77,8 @@ const BottomTabNavigator = createBottomTabNavigator(
     },
   },
 );
+<<<<<<< HEAD
 
+=======
+>>>>>>> b0fd236c6216d64a562b4d2b2fc40d9ac25c7a74
 export default BottomTabNavigator;
