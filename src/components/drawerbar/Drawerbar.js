@@ -1,0 +1,116 @@
+//This is an example code for Navigation Drawer with Custom Side bar//
+import React, {Component} from 'react';
+import {View, Image, Text, Alert} from 'react-native';
+import {TouchableOpacity} from 'react-native-gesture-handler';
+import AsyncStorage from '@react-native-community/async-storage';
+
+//import {Icon} from 'react-native-elements';
+
+import Icon from 'react-native-vector-icons/FontAwesome5';
+import styles from './Drawerbar.style';
+
+class Drawbar extends Component {
+  constructor() {
+    super();
+    //Setting up the Main Top Large Image of the Custom Sidebar
+    this.proileImage =
+      'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png';
+    //Array of the sidebar navigation option with icon and screen to navigate
+    //This screens can be any screen defined in Drawer Navigator in App.js
+    //You can find the Icons from here https://material.io/tools/icons/
+  }
+  render() {
+    return (
+      <View style={styles.sideMenuContainer}>
+        {/*Top Large Image */}
+        <Image
+          source={{uri: this.proileImage}}
+          style={styles.sideMenuProfileIcon}
+        />
+        {/*Divider between Top Image and Sidebar Option*/}
+        <View
+          style={{
+            width: '100%',
+            height: 1,
+            backgroundColor: '#e2e2e2',
+            marginTop: 15,
+          }}
+        />
+        {/*Setting up Navigation Options from option array using loop*/}
+        <View style={{width: '100%'}}>
+          <View>
+            <TouchableOpacity
+              style={styles.container}
+              onPress={() => {
+                this.props.navigation.navigate('Index');
+              }}>
+              <View style={{marginRight: 10, marginLeft: 20}}>
+                <Icon name="camera" size={25} color="#808080" />
+              </View>
+              <Text
+                style={{
+                  fontSize: 15,
+                }}>
+                {'Index'}
+              </Text>
+            </TouchableOpacity>
+          </View>
+          <View>
+            <TouchableOpacity
+              style={styles.container}
+              onPress={() => {
+                this.props.navigation.navigate('Table');
+              }}>
+              <View style={{marginRight: 10, marginLeft: 20}}>
+                <Icon name="list-ul" size={25} color="#808080" />
+              </View>
+              <Text
+                style={{
+                  fontSize: 15,
+                }}>
+                {'Table'}
+              </Text>
+            </TouchableOpacity>
+          </View>
+          <View>
+            <TouchableOpacity
+              style={styles.container}
+              onPress={() =>
+                Alert.alert(
+                  'Đăng xuất',
+                  'Bạn có muốn đăng xuất?',
+                  [
+                    {
+                      text: 'Hủy',
+                      onPress: () => {
+                        return null;
+                      },
+                    },
+                    {
+                      text: 'Ok!!',
+                      onPress: () => {
+                        AsyncStorage.clear();
+                        this.props.navigation.navigate('Auth');
+                      },
+                    },
+                  ],
+                  {cancelable: false},
+                )
+              }>
+              <View style={{marginRight: 10, marginLeft: 20}}>
+                <Icon name="sign-out-alt" size={25} color="#808080" />
+              </View>
+              <Text
+                style={{
+                  fontSize: 15,
+                }}>
+                {'Đăng xuất'}
+              </Text>
+            </TouchableOpacity>
+          </View>
+        </View>
+      </View>
+    );
+  }
+}
+export default Drawbar;

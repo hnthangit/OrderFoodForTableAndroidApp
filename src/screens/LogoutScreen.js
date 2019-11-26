@@ -1,16 +1,31 @@
 import React, {Component} from 'react';
-import {View, ActivityIndicator, StatusBar, AsyncStorage} from 'react-native';
+import {View, ActivityIndicator, StatusBar, Button} from 'react-native';
+import AsyncStorage from '@react-native-community/async-storage';
 
 class LogoutScreen extends Component {
+  signOut = async () => {
+    await AsyncStorage.clear();
+    this.props.navigation.navigate('Auth');
+  };
+
   componentDidMount() {
-    AsyncStorage.clear();
-    this.props.navigation.navigate('Login');
+    const {navigate} = this.props.navigation;
+    navigate('Second');
+    try {
+      fetch('http://apiserver').then(response => {
+        navigate('Auth');
+      });
+    } catch (error) {
+      navigate('Auth');
+    }
   }
+
+  comp
+
   render() {
     return (
       <View>
-        <ActivityIndicator />
-        <StatusBar barStyle="default" />
+        <Button title="Hello" onPress={this.signOut} />
       </View>
     );
   }

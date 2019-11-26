@@ -1,13 +1,71 @@
 import React, {Component} from 'react';
-import {Text, View, TouchableOpacity, AsyncStorage} from 'react-native';
+import {Text, View, TouchableOpacity} from 'react-native';
+import AsyncStorage from '@react-native-community/async-storage';
 import {TextInput} from 'react-native-paper';
 import {Avatar} from 'react-native-elements';
 import LinearGradient from 'react-native-linear-gradient';
 import styles from './Login.style';
+import axios from 'axios';
 class Login extends Component {
-  _signInAsync = async () => {
-    await AsyncStorage.setItem('userToken', 'abc');
-    this.props.navigation.navigate('App');
+  constructor(props) {
+    super(props);
+    this.state = {
+      username: '',
+      password: '',
+    };
+
+    //Không cần sử dụng dòng này vì đã sử dụng arrow function
+    //this.login = this.login.bind(this);
+  }
+
+  componentDidMount() {
+    //console.log('ko co asyncstorage');
+    this.isUserExist();
+  }
+
+  isUserExist = async () => {
+    try {
+      const value = await AsyncStorage.getItem('user');
+      if (value !== null) {
+        // We have data!!
+        console.log(value);
+        this.props.navigation.navigate('App');
+      } else {
+        console.log('ko co asyncstorage');
+      }
+    } catch (e) {
+      // error reading value
+    }
+  };
+
+  login = () => {
+    let url = 'https://hrms.softworldvietnam.com/api/v1/Auth/Login';
+    axios
+      .post(url, {
+        username: this.state.username,
+        password: this.state.password,
+      })
+      .then(response => {
+        if (response.status === 200) {
+          //console.log(response.data.success);
+          this.saveUser(JSON.stringify(response.data.success));
+        }
+      })
+      .catch(function(error) {
+        console.log(error);
+      });
+  };
+
+  saveUser = async userId => {
+    try {
+      //console.log(userId);
+      await AsyncStorage.setItem('user', userId);
+      console.log(AsyncStorage.getItem('user'));
+      //console.log('Save user');
+      this.props.navigation.navigate('App');
+    } catch (e) {
+      // saving error
+    }
   };
 
   render() {
@@ -38,8 +96,8 @@ class Login extends Component {
             mode="outlined"
             label="Tên đăng nhập"
             placeholder="Nhập tên đăng nhập"
-            //value={this.state.text}
-            //onChangeText={text => this.setState({text})}
+            value={this.state.username}
+            onChangeText={username => this.setState({username})}
           />
 
           <TextInput
@@ -47,9 +105,8 @@ class Login extends Component {
             secureTextEntry={true}
             label="Mật khẩu"
             placeholder="Nhập mật khẩu"
-            // onChangeText={this.onPasswordChange.bind(this)}
-
-            //onChangeText={pass => this.setState({pass})}
+            value={this.state.password}
+            onChangeText={password => this.setState({password})}
             //value={this.props.password}
           />
 
@@ -75,7 +132,7 @@ class Login extends Component {
                 start={{x: 0.0, y: 1.0}}
                 end={{x: 1.0, y: 1.0}}>
                 <TouchableOpacity
-                  onPress={this._signInAsync}
+                  onPress={this.login}
                   style={styles.TouchableOpacityStyle}>
                   <Text style={styles.TextLogin}>LOGIN</Text>
                 </TouchableOpacity>
@@ -95,3 +152,4 @@ class Login extends Component {
 }
 
 export default Login;
+//Cachs lamf
