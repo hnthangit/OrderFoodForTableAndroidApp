@@ -113,6 +113,24 @@ export const BillHistoryStack = createStackNavigator({
           onPress={() => navigation.dispatch(DrawerActions.openDrawer())}
         />
       ),
+      headerRight: (
+        //Thay bằng icon reload
+        <Icon
+          size={33}
+          name="menu"
+          type="meterial"
+          onPress={() =>
+            navigation.dispatch(
+              StackActions.reset({
+                index: 0,
+                actions: [
+                  NavigationActions.navigate({routeName: 'BillHistory'}),
+                ],
+              }),
+            )
+          }
+        />
+      ),
     }),
   },
 
