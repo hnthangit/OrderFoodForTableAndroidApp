@@ -4,7 +4,7 @@ import {Text, View, ScrollView} from 'react-native';
 class ProfileScreen extends Component {
   render() {
     return (
-      <View style={{flex:1, justifyContent: "center", alignItems: "center"}}>
+      <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
         <Text>ProfileScreen</Text>
         <ScrollView>
           <Text>Thông tin cá nhân</Text>

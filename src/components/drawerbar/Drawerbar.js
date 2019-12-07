@@ -59,7 +59,7 @@ class Drawbar extends Component {
             <TouchableOpacity
               style={styles.container}
               onPress={() => {
-                this.props.navigation.navigate('Table');
+                this.props.navigation.navigate('AuthorInfo');
               }}>
               <View style={{marginRight: 10, marginLeft: 20}}>
                 <Icon name="list-ul" size={25} color="#808080" />
@@ -68,7 +68,7 @@ class Drawbar extends Component {
                 style={{
                   fontSize: 15,
                 }}>
-                {'Table'}
+                {'Thông tin tác giả'}
               </Text>
             </TouchableOpacity>
           </View>

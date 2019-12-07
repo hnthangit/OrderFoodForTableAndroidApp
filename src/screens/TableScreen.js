@@ -1,27 +1,32 @@
 import React, {Component} from 'react';
-import {Text, View, ScrollView, Button} from 'react-native';
+import {Text, View, ScrollView} from 'react-native';
 import Table from '../components/table/Table';
-import TouchMenuIcon from '../components/touchmenuicon/TouchMenuIcon';
 import axios from 'axios';
 
 class TableScreen extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      tableData: [],
+    };
+  }
+  //pass them navigation cho child comp
+  //generate dynamically stack nav
   componentDidMount() {
-    //Call api o day
-    // let url = 'https://hrms.softworldvietnam.com/api/v1/Auth/Login';
-    // axios
-    //   .post(url, {
-    //     username: this.state.username,
-    //     password: this.state.password,
-    //   })
-    //   .then(response => {
-    //     if (response.status === 200) {
-    //       //console.log(response.data.success);
-    //       this.saveUser(JSON.stringify(response.data.success));
-    //     }
-    //   })
-    //   .catch(function(error) {
-    //     console.log(error);
-    //   });
+    let url = 'http://restaurantappapi.azurewebsites.net/api/Tables';
+    axios
+      .get(url)
+      .then(response => {
+        if (response.status === 200) {
+          //console.log(response.data.success);
+          this.setState({
+            tableData: response.data,
+          });
+        }
+      })
+      .catch(function(error) {
+        console.log(error);
+      });
   }
 
   componentDidUpdate() {
@@ -31,13 +36,27 @@ class TableScreen extends Component {
   handletouch() {
     //Viet ham xu li su kiem cham vao View o day
   }
+
+  renderTableItem = () => {
+    if (this.state.tableData) {
+      return this.state.tableData.map(item => {
+        return (
+          <Table
+            navigation={this.props.navigation}
+            key={item.id}
+            item={item}
+            tableName={item.id}
+          />
+        );
+      });
+    }
+  };
+
   render() {
     return (
       <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
         <Text>TableScreen</Text>
-        <ScrollView>
-          <Table navigation={this.props.navigation} tableName="1" />
-        </ScrollView>
+        <ScrollView>{this.renderTableItem()}</ScrollView>
       </View>
     );
   }

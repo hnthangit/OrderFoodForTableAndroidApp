@@ -14,4 +14,14 @@ export default StyleSheet.create({
     backgroundColor: '#43a1c9',
     flex: 1,
   },
+  koconguoi: {
+    padding: 30,
+    marginBottom: 10,
+    marginTop: 10,
+    width: deviceWidth,
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: 'red',
+    flex: 1,
+  },
 });

@@ -35,9 +35,6 @@ const BottomTabNavigator = createBottomTabNavigator(
     initialRouteName: 'TableInfoScreen', // screen hiện đầu tiên
     //order: ['TableInfoScreen'],
     //navigation for complete tag navigator
-    navigationOptions: {
-      tabBarVisible: true, // ẩn/ hiện menu bottom
-    },
     tabBarOptions: {
       activeTintColor: 'red',
       inactiveTintColor: 'gray',

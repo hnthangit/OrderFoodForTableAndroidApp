@@ -4,9 +4,17 @@ import styles from './Table.style';
 class Table extends Component {
   render() {
     return (
+      //o la o, co la 1
       <TouchableHighlight
-        onPress={() => this.props.navigation.navigate('OrderFood')}>
-        <View on style={styles.container}>
+        onPress={() =>
+          this.props.navigation.navigate('OrderFood', {
+            tableName: this.props.tableName,
+          })
+        }>
+        <View
+          style={
+            this.props.item.flag === 1 ? styles.container : styles.koconguoi
+          }>
           <Text>Bàn số {this.props.tableName}</Text>
         </View>
       </TouchableHighlight>
