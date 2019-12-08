@@ -67,8 +67,8 @@ class BillInfoScreen extends Component {
     return (
       <View>
         <Text>Mã hóa đơn: {this.state.billInfo.id}</Text>
-        <Text>Người lập: {this.state.date}</Text>
-        <Text>Ngày lập: {this.state.name}</Text>
+        <Text>Ngày lập: {this.state.date}</Text>
+        <Text>Người lập: {this.state.name}</Text>
         <ScrollView>{this.renderBillInfo()}</ScrollView>
         <Text style={{color: 'red', fontSize: 50}}>
           Tổng tiền: {this.state.billInfo.totalPayment}
