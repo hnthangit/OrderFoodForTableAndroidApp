@@ -6,6 +6,7 @@ import StackNavigator from './StackNavigator';
 import Splash from '../components/splash/Splash';
 const SwitchNavigator = createSwitchNavigator(
   {
+    AuthLoading: AuthLoadingScreen,
     //Table: StackNavigator,
     App: DrawerNavigator,
     Auth: LoginScreen,

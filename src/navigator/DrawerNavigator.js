@@ -1,5 +1,5 @@
 import {createDrawerNavigator} from 'react-navigation-drawer';
-import {StackNavigator} from './StackNavigator';
+import {AuthorInfoStack} from '../navigator/StackNavigator';
 import LogoutScreen from '../screens/LogoutScreen';
 import {MainNav} from './MainNav';
 import Drawerbar from '../components/drawerbar/Drawerbar';
@@ -16,55 +16,16 @@ const DrawerNavigator = createDrawerNavigator(
         };
       },
     },
-    Table: {
-      screen: StackNavigator,
+    AuthorInfo: {
+      screen: AuthorInfoStack,
       navigationOptions: {
-        drawerLabel: 'Danh sách bàn',
+        drawerLabel: 'Thông tin tác giả',
       },
     },
     LogoutScreen: {
       screen: LogoutScreen,
       navigationOptions: ({navigation}) => ({
         drawerLabel: 'Đăng xuất',
-        // contentComponent: props => (
-        //   <View style={{flex: 1}}>
-        //     <SafeAreaView forceInset={{top: 'always', horizontal: 'never'}}>
-        //       <DrawerItems {...props} />
-        //       <TouchableOpacity
-        //         onPress={() =>
-        //           Alert.alert(
-        //             'Log out',
-        //             'Do you want to logout?',
-        //             [
-        //               {
-        //                 text: 'Cancel',
-        //                 onPress: () => {
-        //                   return null;
-        //                 },
-        //               },
-        //               {
-        //                 text: 'Confirm',
-        //                 onPress: () => {
-        //                   AsyncStorage.clear();
-        //                   props.navigation.navigate('Auth');
-        //                 },
-        //               },
-        //             ],
-        //             {cancelable: false},
-        //           )
-        //         }>
-        //         <Text
-        //           style={{
-        //             margin: 16,
-        //             fontWeight: 'bold',
-        //             color: colors.textColor,
-        //           }}>
-        //           Logout
-        //         </Text>
-        //       </TouchableOpacity>
-        //     </SafeAreaView>
-        //   </View>
-        // ),
       }),
     },
   },
