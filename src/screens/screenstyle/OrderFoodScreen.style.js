@@ -24,7 +24,6 @@ export default StyleSheet.create({
     backgroundColor: '#3bfc2d',
     width: 80,
     height: 30,
-    
   },
   search_text: {
     textAlign: 'center',

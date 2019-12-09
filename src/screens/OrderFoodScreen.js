@@ -18,7 +18,7 @@ import Food from '../components/food/Food';
 import styles from '../screens/screenstyle/OrderFoodScreen.style';
 import axios from 'axios';
 import CardView from 'react-native-cardview';
-import { Icon } from 'react-native-elements';
+import {Icon} from 'react-native-elements';
 class OrderFoodScreen extends Component {
   constructor(props) {
     super(props);

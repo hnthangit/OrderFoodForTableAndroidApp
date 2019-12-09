@@ -45,16 +45,19 @@ class Login extends Component {
   };
 
   login = () => {
-    let url = 'https://hrms.softworldvietnam.com/api/v1/Auth/Login';
+    let url =
+      'http://restaurantappapi.azurewebsites.net/api/Users/Login?username=' +
+      this.state.username +
+      '&password=' +
+      this.state.password;
     axios
-      .post(url, {
-        username: this.state.username,
-        password: this.state.password,
-      })
+      .get(url)
       .then(response => {
         if (response.status === 200) {
           //console.log(response.data.success);
-          this.saveUser(JSON.stringify(response.data.success));
+          this.saveUser(JSON.stringify(response.data.id));
+        } else {
+          console.log('ko dung');
         }
       })
       .catch(function(error) {
