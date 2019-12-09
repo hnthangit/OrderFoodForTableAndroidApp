@@ -6,14 +6,14 @@ var deviceWidth = Dimensions.get('window').width;
 export default StyleSheet.create({
   container: {
     flex: 1,
-    display: 'flex',
-    height: 200,
+    height: 150,
   },
   detail: {
     display: 'flex',
     flexDirection: 'row',
     padding: 20,
-    marginBottom: 20,
+    // margin: 10,
+    marginBottom: -10,
     width: deviceWidth,
     alignItems: 'center',
     justifyContent: 'center',
@@ -29,16 +29,13 @@ export default StyleSheet.create({
     bottom: 0,
     left: deviceWidth / 20,
     borderRadius: 10,
-    borderWidth: 1,
   },
   detailInfo: {
-    // margin: 10,
-    backgroundColor: '#ffffff',
+    backgroundColor: '#f0f58c',
     width: deviceWidth * 0.8,
     height: 140,
     position: 'absolute',
     top: 10,
-    // zIndex: 0,
     borderWidth: 1,
     borderRadius: 10,
     shadowColor: 'grey',
@@ -66,7 +63,7 @@ export default StyleSheet.create({
     borderRadius: 10,
   },
   starStyle: {
-    marginLeft: 120,
+    marginLeft: 110,
     // alignItems: 'center',
   },
 });

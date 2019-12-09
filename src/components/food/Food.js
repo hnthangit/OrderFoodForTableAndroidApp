@@ -59,15 +59,31 @@ class Food extends Component {
       4: require('../../assets/images/canhthitbo.jpg'),
       5: require('../../assets/images/bunbo.jpg'),
       6: require('../../assets/images/pho.jpg'),
+      7: require('../../assets/images/canhtrungcachua.jpg'),
+      8: require('../../assets/images/thittraugacbep.jpg'),
+      9: require('../../assets/images/thitkhotrung.jpg'),
+      10: require('../../assets/images/raumuongluoc.jpg'),
+      11: require('../../assets/images/trungluoc.jpg'),
+      12: require('../../assets/images/tietcanh.jpg'),
+      13: require('../../assets/images/hathuongduong.jpg'),
+      14: require('../../assets/images/salad.jpg'),
+      15: require('../../assets/images/cachep.jpg'),
+      16: require('../../assets/images/tom.jpg'),
+      17: require('../../assets/images/che.jpg'),
+      18: require('../../assets/images/canhsuon.jpg'),
     };
     return (
       <View style={styles.container}>
         <View style={styles.detail}>
-          <View style={styles.detailInfo}>
+          <CardView
+            style={styles.detailInfo}
+            cardElevation={15}
+            cardMaxElevation={5}
+            cornerRadius={5}>
             <Text style={styles.detailText}>{this.props.item.name} </Text>
             <Text style={styles.detailText}>{this.props.item.price} VNĐ</Text>
             <Star score={5} style={styles.starStyle} />
-          </View>
+          </CardView>
           <View style={styles.detailImg}>
             <Image
               style={styles.detailImage}

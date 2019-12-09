@@ -7,7 +7,11 @@ class Table extends Component {
       <View style={{flex: 1, alignContent: 'flex-start', flexWrap: 'wrap'}}>
         <TouchableHighlight
           style={styles.motban}
-          onPress={() => this.props.navigation.navigate('OrderFood')}>
+          onPress={() =>
+            this.props.navigation.navigate('OrderFood', {
+              tableName: this.props.tableName,
+            })
+          }>
           <View on style={styles.container}>
             <View>
               <Image
@@ -15,7 +19,10 @@ class Table extends Component {
                 source={require('../../assets/images/table2.png')}
               />
             </View>
-            <View>
+            <View
+              style={
+                this.props.item.flag === 1 ? styles.container : styles.koconguoi
+              }>
               <Text>Bàn số {this.props.tableName}</Text>
             </View>
           </View>

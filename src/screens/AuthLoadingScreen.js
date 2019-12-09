@@ -1,13 +1,5 @@
 import React from 'react';
-import {
-  ActivityIndicator,
-  View,
-  Text,
-  StatusBar,
-  Animated,
-  Image,
-  ImageBackground,
-} from 'react-native';
+import {ActivityIndicator, View, Text, StatusBar, Animated} from 'react-native';
 import AsyncStorage from '@react-native-community/async-storage';
 import styles from '../components/splash/Splash.style';
 class AuthLoadingScreen extends React.Component {
@@ -44,15 +36,6 @@ class AuthLoadingScreen extends React.Component {
           style={{...styles.AvatarStyle, opacity: this.state.logoOpacity}}
         />
         <Text>App Order Food</Text>
-        {/* <Avatar
-          avatarStyle={styles.AvatarStyle}
-          size="xlarge"
-          rounded
-          source={{
-            uri:
-              'https://i.pinimg.com/564x/9f/d0/a4/9fd0a4b0b05ddd181b4958ea9890679d.jpg',
-          }}
-        /> */}
         <StatusBar barStyle="default" />
         <ActivityIndicator size="large" color="black" />
       </View>

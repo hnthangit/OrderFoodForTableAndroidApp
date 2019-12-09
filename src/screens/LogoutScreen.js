@@ -20,8 +20,6 @@ class LogoutScreen extends Component {
     }
   }
 
-  comp
-
   render() {
     return (
       <View>

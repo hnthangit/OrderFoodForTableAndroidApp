@@ -1,17 +1,163 @@
 import React, {Component} from 'react';
-import {Text, View, ScrollView} from 'react-native';
+import {Text, View, ScrollView, Alert, Button} from 'react-native';
+import {TouchableOpacity} from 'react-native';
+import {StackActions, NavigationActions} from 'react-navigation';
+import axios from 'axios';
+import Modal from 'react-native-modal';
+import styles from './screenstyle/TableInfoScreen.style';
+import {Icon, Image} from 'react-native-elements';
+import CardView from 'react-native-cardview';
 class TableInfoScreen extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      data: [],
+      food: [],
+      modalVisible: false,
+    };
+  }
   componentDidMount() {
-    //Call api o day
+    let urlGetOrder =
+      'http://restaurantappapi.azurewebsites.net/api/Orders/GetOrdersByTableId?tableId=' +
+      JSON.stringify(this.props.navigation.getParam('tableName', 0));
+    let urlGetFood = 'http://restaurantappapi.azurewebsites.net/api/Foods';
+    axios
+      .all([axios.get(urlGetOrder), axios.get(urlGetFood)])
+      .then(
+        axios.spread((getOrderRes, getFoodRes) => {
+          if (getOrderRes.status === 200) {
+            this.setState({
+              data: getOrderRes.data,
+            });
+          }
+          if (getFoodRes.status === 200) {
+            this.setState({
+              food: getFoodRes.data,
+            });
+          }
+        }),
+      )
+      .catch(error => {
+        console.log(error);
+      });
   }
 
-  componentDidUpdate() {
-    //Xu li data sau khi xu li su kien o day
+  setModalVisible = () => {
+    this.setState({
+      modalVisible: !this.state.modalVisible,
+    });
+  };
+
+  componentWillUnmount() {
+    this.setState({
+      modalVisible: !this.state.modalVisible,
+    });
   }
+
+  payment = () => {
+    let url =
+      'http://restaurantappapi.azurewebsites.net/api/Tables/' +
+      this.props.navigation.getParam('tableName', 0) +
+      '/GetBilling';
+    axios
+      .post(url)
+      .then(response => {
+        if (response.status === 200) {
+          Alert.alert('Thông báo', 'Bạn đã thanh toán thành công', [
+            {
+              text: 'Đồng ý',
+              onPress: () => {
+                this.props.navigation.dispatch(
+                  StackActions.reset({
+                    index: 0,
+                    actions: [
+                      NavigationActions.navigate({routeName: 'TableScreen'}),
+                    ],
+                  }),
+                );
+              },
+            },
+          ]);
+        }
+      })
+      .catch(function(error) {
+        console.log(error);
+      });
+  };
+
+  renderAlertSuccess = () => {
+    Alert.alert('Thông báo', 'Bạn đã thanh toán thành công', [
+      {text: 'Đồng ý', onPress: this.props.navigation.navigate('TableScreen')},
+    ]);
+  };
+
+  renderTableInfo = () => {
+    if (this.state.data.length !== 0) {
+      return this.state.data.map(item => {
+        let food = this.state.food.find(x => x.id === item.foodId);
+        let imageUri = {
+          1: require('../assets/images/canhca.jpg'),
+        };
+        if (food !== undefined) {
+          return (
+            <CardView
+              style={styles.cardview}
+              cardElevation={15}
+              cardMaxElevation={5}
+              cornerRadius={5}
+              key={item.foodId}>
+              <Text>Món: {food.name}</Text>
+              <Text>Đơn giá: {food.price}</Text>
+              <Text>Số lượng: {item.quantity}</Text>
+              <Text>Thành tiền: {item.paymentAmount}</Text>
+            </CardView>
+          );
+        }
+      });
+    } else {
+      return (
+        <View style={styles.empty}>
+          <Text style={styles.empty_text}>Bàn trống</Text>
+        </View>
+      );
+    }
+  };
+
   render() {
     return (
-      <View style={{flex: 3, justifyContent: 'center', alignItems: 'center'}}>
-        <Text>TableInfoScreen</Text>
+      <View style={styles.food_table}>
+        <ScrollView>{this.renderTableInfo()}</ScrollView>
+        <TouchableOpacity onPress={this.setModalVisible}>
+          <View
+            style={
+              this.state.data.length !== 0
+                ? styles.btn_payment
+                : styles.btn_payment_d_none
+            }>
+            <Icon size={55} name="cash-usd" type="material-community" />
+          </View>
+        </TouchableOpacity>
+        <Modal
+          onBackButtonPress={this.setModalVisible}
+          isVisible={this.state.modalVisible}
+          transparent={true}>
+          <View style={styles.modal_alert_payment}>
+            <Text style={styles.textAlert}>
+              Bạn có chắc chắn muốn thanh toán ?
+            </Text>
+            <View style={styles.modal_alert_payment_btn}>
+              <TouchableOpacity style={styles.btn} onPress={this.payment}>
+                <Text>OK</Text>
+              </TouchableOpacity>
+
+              <TouchableOpacity
+                style={styles.btn}
+                onPress={this.setModalVisible}>
+                <Text>Hủy</Text>
+              </TouchableOpacity>
+            </View>
+          </View>
+        </Modal>
       </View>
     );
   }

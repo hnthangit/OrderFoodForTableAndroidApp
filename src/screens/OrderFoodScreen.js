@@ -15,7 +15,10 @@ import AsyncStorage from '@react-native-community/async-storage';
 import Modal from 'react-native-modal';
 import {StackActions, NavigationActions} from 'react-navigation';
 import Food from '../components/food/Food';
+import styles from '../screens/screenstyle/OrderFoodScreen.style';
 import axios from 'axios';
+import CardView from 'react-native-cardview';
+import { Icon } from 'react-native-elements';
 class OrderFoodScreen extends Component {
   constructor(props) {
     super(props);
@@ -107,11 +110,13 @@ class OrderFoodScreen extends Component {
     });
 
     if (orderFood.length !== 0) {
-      for (let i = 0; i < orderFood.length; i++)
-        for (let k = 0; k < selectedFood.length; k++)
+      for (let i = 0; i < orderFood.length; i++) {
+        for (let k = 0; k < selectedFood.length; k++) {
           if (orderFood[i].foodId === selectedFood[k].foodId) {
             selectedFood[k].quantity += orderFood[i].quantity;
           }
+        }
+      }
       this.requestOrderFood(selectedFood);
     } else {
       //this.requestUpdateTable();
@@ -247,49 +252,30 @@ class OrderFoodScreen extends Component {
           onBackButtonPress={this.setModalVisible}
           isVisible={this.state.modalVisible}
           transparent={true}>
-          <View
-            style={{
-              alignItems: 'center',
-              justifyContent: 'center',
-              display: 'flex',
-              backgroundColor: 'white',
-              height: '90%',
-            }}>
-            <Text>Các món đã gọi</Text>
+          <View style={styles.modal}>
+            <Text style={styles.modal_text}>Các món đã gọi</Text>
             <ScrollView>
               {this.state.selectedFood.map(item => {
                 return (
-                  <Text key={item.id}>
-                    {item.name}: {item.quantity}
-                  </Text>
+                  <CardView
+                    style={styles.modal_food}
+                    cardElevation={15}
+                    cardMaxElevation={5}
+                    cornerRadius={5}>
+                    <Text
+                      style={{paddingTop: 5, paddingLeft: 10}}
+                      key={item.id}>
+                      {item.name}: {item.quantity}
+                    </Text>
+                  </CardView>
                 );
               })}
             </ScrollView>
-            <View
-              style={{
-                height: '13%',
-                width: '100%',
-                display: 'flex',
-                flexDirection: 'row',
-                justifyContent: 'space-between',
-              }}>
-              <TouchableOpacity
-                style={{
-                  width: '50%',
-                  display: 'flex',
-                  justifyContent: 'center',
-                  alignItems: 'center',
-                }}>
+            <View style={styles.touch_btn}>
+              <TouchableOpacity style={styles.touch_btn_select_all}>
                 <Button onPress={this.resetFood} title="Chọn lại hết" />
               </TouchableOpacity>
-              <View
-                style={{
-                  width: '50%',
-                  display: 'flex',
-                  flexDirection: 'row',
-                  justifyContent: 'space-around',
-                  alignItems: 'center',
-                }}>
+              <View style={styles.touch_btn_close_order}>
                 <TouchableOpacity>
                   <Button onPress={this.setModalVisible} title="Đóng" />
                 </TouchableOpacity>
@@ -300,24 +286,21 @@ class OrderFoodScreen extends Component {
             </View>
           </View>
         </Modal>
-        <View
-          style={{
-            display: 'flex',
-            alignItems: 'center',
-            flexDirection: 'row',
-            justifyContent: 'space-around',
-          }}>
-          <Text>Icon chu X</Text>
+        <View style={styles.search}>
+          <Icon size={20} name="close" type="material-community" />
           <TextInput
-            style={{borderColor: 'gray', borderWidth: 1, width: 100}}
+            style={styles.search_input}
             value={this.state.search}
             onChangeText={searchQuery => {
               this.setState({searchQuery});
               //this.handleChange(search);
             }}
           />
-          <TouchableOpacity underlayColor="gray">
-            <Button onPress={this.setModalVisible} title="xac nhan" />
+          <TouchableOpacity
+            style={styles.search_btn}
+            underlayColor="gray"
+            onPress={this.setModalVisible}>
+            <Text style={styles.search_text}>Xác nhận</Text>
           </TouchableOpacity>
         </View>
         <ScrollView>{this.renderFoodItem(foodArray)}</ScrollView>
