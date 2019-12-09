@@ -5,12 +5,31 @@ var deviceWidth = Dimensions.get('window').width;
 
 export default StyleSheet.create({
   container: {
-    padding: 30,
-    marginBottom: 10,
-    marginTop: 10,
-    width: deviceWidth,
-    alignItems: 'center',
+    flex: 1,
     justifyContent: 'center',
-    backgroundColor: '#43a1c9',
+    alignItems: 'center',
+    width: deviceWidth - 20,
+  },
+  bill: {
+    display: 'flex',
+    flex: 1,
+    flexDirection: 'row',
+    width: deviceWidth,
+    height: 100,
+    backgroundColor: '#f7f7f7',
+    marginBottom: 20,
+    borderBottomColor: '#e8e34d',
+    borderBottomWidth: 1,
+    borderRadius: 10,
+  },
+  bill_sum: {
+    display: 'flex',
+    flex: 1,
+    alignItems: 'flex-end',
+    marginRight: 20,
+  },
+  bill_text_sum: {
+    paddingTop: 20,
+    fontSize: 25,
   },
 });

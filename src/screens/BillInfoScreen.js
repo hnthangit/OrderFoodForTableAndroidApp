@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import {Text, View, ScrollView} from 'react-native';
 import axios from 'axios';
+import styles from './screenstyle/BillInfoScreen.style';
+import {Icon} from 'react-native-elements';
 
 class BillInfoScreen extends Component {
   constructor(props) {
@@ -51,12 +53,14 @@ class BillInfoScreen extends Component {
         ) {
           return (
             <View
-              key={item.foodId}
-              style={{borderColor: 'red', borderWidth: 1}}>
-              <Text>Tên món: {food.name}</Text>
-              <Text>Giá: {food.price}</Text>
-              <Text>Số lượng: {item.quantity}</Text>
-              <Text>Thành tiền: {item.paymentAmount}</Text>
+              style={styles.food}
+              cardElevation={20}
+              cardMaxElevation={5}
+              cornerRadius={5}
+              key={item.foodId}>
+              <Text style={styles.food_quantity}>{item.quantity} X </Text>
+              <Text style={styles.food_name}>{food.name}</Text>
+              <Text style={styles.food_total}>{item.paymentAmount}</Text>
             </View>
           );
         }
@@ -66,13 +70,38 @@ class BillInfoScreen extends Component {
   render() {
     return (
       <View>
-        <Text>Mã hóa đơn: {this.state.billInfo.id}</Text>
-        <Text>Người lập: {this.state.date}</Text>
-        <Text>Ngày lập: {this.state.name}</Text>
+        <View style={styles.bill_info_top}>
+          <Text style={styles.bill_info_top_left}>
+            {'  '}
+            Mã hóa đơn {this.state.billInfo.id}
+          </Text>
+          <Text style={styles.bill_info_top_right}>
+            Ngày lập: {this.state.date}
+          </Text>
+        </View>
+        <View style={styles.text_in_food}>
+          <Text>{'  '}Tóm tắt đơn hàng</Text>
+          <Icon
+            style={styles.icon_text_right}
+            size={18}
+            name="information-variant"
+            type="material-community"
+          />
+        </View>
         <ScrollView>{this.renderBillInfo()}</ScrollView>
-        <Text style={{color: 'red', fontSize: 50}}>
+        {/* <Text style={{color: 'red', fontSize: 50}}>
           Tổng tiền: {this.state.billInfo.totalPayment}
-        </Text>
+        </Text> */}
+        {/* <View style={styles.text_in_total}>
+          <Text style={styles.text_in_total_a}>{'  '}Tổng tạm tính</Text>
+          <Text style={styles.text_in_total_b}>{'  '}Khuyến mãi</Text>
+        </View> */}
+        <View style={styles.text_in_total}>
+          <Text style={styles.text_in_total_a}>{'  '}Tổng cộng</Text>
+          <Text style={styles.text_in_total_b}>
+            {this.state.billInfo.totalPayment}
+          </Text>
+        </View>
       </View>
     );
   }

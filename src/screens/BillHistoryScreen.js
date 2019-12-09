@@ -2,7 +2,8 @@ import React, {Component} from 'react';
 import {Text, View, ScrollView} from 'react-native';
 import axios from 'axios';
 import Bill from '../components/bill/Bill';
-
+import styles from './screenstyle/BillHistoryScreen.style';
+import {Icon} from 'react-native-elements';
 class BillHistoryScreen extends Component {
   constructor(props) {
     super(props);
@@ -46,11 +47,11 @@ class BillHistoryScreen extends Component {
   };
   render() {
     return (
-      <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
-        <Text>Bill History Screen</Text>
+      <View style={styles.container}>
+        {/* <Text>Bill History Screen</Text> */}
         <ScrollView>
-          <Text>List bill</Text>
           {this.renderBillItem()}
+          <Text style={styles.text_end}>Bạn đã xem hết các hóa đơn</Text>
         </ScrollView>
       </View>
     );

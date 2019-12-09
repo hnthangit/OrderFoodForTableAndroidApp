@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {Text, View, TouchableHighlight} from 'react-native';
+import {Icon} from 'react-native-elements';
 import styles from './Bill.style';
 class Bill extends Component {
   constructor(props) {
@@ -23,10 +24,24 @@ class Bill extends Component {
           });
         }}>
         <View style={styles.container}>
-          <Text>Mã hóa đơn: {this.props.item.id}</Text>
-          <Text>Người lập: {nameArray[this.props.item.creatorId - 1]}</Text>
-          <Text>Ngày lập: {date}</Text>
-          <Text>Tổng tiền: {this.props.item.totalPayment}</Text>
+          <View style={styles.bill}>
+            <View style={styles.bill_icon}>
+              <Icon
+                size={100}
+                name="account-check-outline"
+                type="material-community"
+              />
+            </View>
+            <View style={styles.bill_info}>
+              <Text>Mã hóa đơn: {this.props.item.id}</Text>
+              <Text>Người lập: {nameArray[this.props.item.creatorId - 1]}</Text>
+              <Text style={styles.bill_text_sum}>Tổng tiền: {this.props.item.totalPayment}</Text>
+            </View>
+            <View style={styles.bill_sum}>
+              <Text>Ngày lập</Text>
+              <Text>{date}</Text>
+            </View>
+          </View>
         </View>
       </TouchableHighlight>
     );
