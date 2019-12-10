@@ -19,7 +19,7 @@ export const StackNavigator = createStackNavigator(
         title: 'Bàn',
         headerTintColor: 'black',
         headerStyle: {
-          backgroundColor: '#e0e0e0',
+          backgroundColor: 'rgba(245,245,245 ,1)',
         },
         headerLeft: (
           <Icon
@@ -57,7 +57,7 @@ export const StackNavigator = createStackNavigator(
         headerTintColor: 'black',
         title: 'Thông tin bàn',
         headerStyle: {
-          backgroundColor: '#e0e0e0',
+          backgroundColor: 'rgba(245,245,245 ,1)',
         },
       },
     },
@@ -87,7 +87,7 @@ export const AuthorInfoStack = createStackNavigator(
         title: 'Thông tin tác giả',
         headerTintColor: 'black',
         headerStyle: {
-          backgroundColor: '#e0e0e0',
+          backgroundColor: 'rgba(245,245,245 ,1)',
         },
         headerLeft: (
           <Icon
@@ -113,7 +113,7 @@ export const BillHistoryStack = createStackNavigator({
       title: 'Lịch sử hóa đơn',
       headerTintColor: 'black',
       headerStyle: {
-        backgroundColor: '#e0e0e0',
+        backgroundColor: 'rgba(245,245,245 ,1)',
       },
       headerLeft: (
         <Icon
@@ -150,7 +150,7 @@ export const BillHistoryStack = createStackNavigator({
       headerTintColor: 'black',
       tabBarVisible: false,
       headerStyle: {
-        backgroundColor: '#e0e0e0',
+        backgroundColor: 'rgba(245,245,245 ,1)',
       },
     }),
   },
@@ -174,7 +174,7 @@ export const IndexStack = createStackNavigator({
       title: 'Trang chủ',
       headerTintColor: 'black',
       headerStyle: {
-        backgroundColor: '#e0e0e0',
+        backgroundColor: 'rgba(245,245,245 ,1)',
       },
       headerLeft: (
         <Icon

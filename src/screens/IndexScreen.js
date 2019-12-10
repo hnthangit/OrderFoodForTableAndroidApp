@@ -1,10 +1,11 @@
 import React, {Component} from 'react';
-import {Text, View, Button, Image} from 'react-native';
+import {Text, View} from 'react-native';
+import styles from './screenstyle/IndexScreen.style';
 
 class IndexScreen extends Component {
   render() {
     return (
-      <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
+      <View style={styles.container}>
         <Text>Đây là trang chủ</Text>
       </View>
     );

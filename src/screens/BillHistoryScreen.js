@@ -3,7 +3,6 @@ import {Text, View, ScrollView} from 'react-native';
 import axios from 'axios';
 import Bill from '../components/bill/Bill';
 import styles from './screenstyle/BillHistoryScreen.style';
-import {Icon} from 'react-native-elements';
 class BillHistoryScreen extends Component {
   constructor(props) {
     super(props);

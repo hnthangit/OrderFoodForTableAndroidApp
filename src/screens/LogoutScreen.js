@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {View, ActivityIndicator, StatusBar, Button} from 'react-native';
+import {View, Button} from 'react-native';
 import AsyncStorage from '@react-native-community/async-storage';
 
 class LogoutScreen extends Component {

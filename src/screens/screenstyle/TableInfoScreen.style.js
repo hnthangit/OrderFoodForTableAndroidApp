@@ -10,14 +10,16 @@ export default StyleSheet.create({
   btn_payment: {
     alignSelf: 'center',
     display: 'flex',
-    borderRadius: Math.round(deviceWidth + Dimensions.get('window').height) / 2,
+    borderRadius:
+      Math.round(deviceWidth + Dimensions.get('window').height) / 10,
     width: deviceWidth * 0.2,
     height: deviceWidth * 0.2,
-    borderColor: '#14e0da',
-    borderWidth: 2,
     justifyContent: 'center',
     alignItems: 'center',
     marginLeft: deviceWidth - 100,
+    backgroundColor: 'rgba(255,234,0 ,1)',
+    borderWidth: 15,
+    borderColor: 'white',
   },
   modal_alert_payment: {
     alignItems: 'center',

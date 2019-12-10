@@ -20,7 +20,11 @@ class Table extends Component {
                     ? styles.tableImgconguoi
                     : styles.tableImgkoconguoi
                 }
-                source={require('../../assets/images/table2.png')}
+                source={
+                  this.props.item.flag === 0
+                    ? require('../../assets/images/table.png')
+                    : require('../../assets/images/table2.png')
+                }
               />
             </View>
             <View>

@@ -1,11 +1,5 @@
 import React, {Component} from 'react';
-import {
-  Text,
-  View,
-  TouchableHighlight,
-  Image,
-  TouchableOpacity,
-} from 'react-native';
+import {Text, View, Image, TouchableOpacity} from 'react-native';
 import styles from './Food.style';
 import {Icon} from 'react-native-elements';
 import Star from 'react-native-star-view';

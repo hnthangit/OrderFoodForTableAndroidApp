@@ -4,12 +4,9 @@ import {
   View,
   ScrollView,
   Button,
-  SafeAreaView,
   TextInput,
   Alert,
   TouchableOpacity,
-  Dimensions,
-  TouchableHighlight,
 } from 'react-native';
 import AsyncStorage from '@react-native-community/async-storage';
 import Modal from 'react-native-modal';
@@ -241,7 +238,7 @@ class OrderFoodScreen extends Component {
     // this.state.search === ''
     //   ? (foodArray = this.state.data)
     //   : (foodArray = this.handleChange);
-    const {data, searchQuery, selectedFood} = this.state;
+    const {data, searchQuery} = this.state;
     const searchQueryLowerCased = searchQuery.toLowerCase();
     const foodArray = data.filter(item => {
       return item.name.toLowerCase().includes(searchQueryLowerCased);

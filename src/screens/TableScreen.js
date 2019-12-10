@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Text, View, ScrollView, Image} from 'react-native';
+import {View, ScrollView} from 'react-native';
 import Table from '../components/table/Table';
 import axios from 'axios';
 import styles from './screenstyle/TableScreen.style';

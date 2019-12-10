@@ -35,11 +35,12 @@ class Bill extends Component {
             <View style={styles.bill_info}>
               <Text>Mã hóa đơn: {this.props.item.id}</Text>
               <Text>Người lập: {nameArray[this.props.item.creatorId - 1]}</Text>
-              <Text style={styles.bill_text_sum}>Tổng tiền: {this.props.item.totalPayment}</Text>
+              <Text style={styles.bill_text_sum}>
+                Tổng tiền: {this.props.item.totalPayment}
+              </Text>
             </View>
             <View style={styles.bill_sum}>
-              <Text>Ngày lập</Text>
-              <Text>{date}</Text>
+              <Text style={{fontSize: 10}}>{date}</Text>
             </View>
           </View>
         </View>

@@ -28,6 +28,6 @@ export default StyleSheet.create({
   },
   bill_text_sum: {
     paddingTop: 20,
-    fontSize: 25,
+    fontSize: 20,
   },
 });

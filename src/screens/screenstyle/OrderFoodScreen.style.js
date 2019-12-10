@@ -19,6 +19,7 @@ export default StyleSheet.create({
     borderWidth: 1,
     width: deviceWidth - 130,
     height: 30,
+    borderRadius: 1000,
   },
   //style btn Xac nhan
   search_btn: {

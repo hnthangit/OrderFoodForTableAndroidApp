@@ -1,11 +1,11 @@
 import React, {Component} from 'react';
-import {Text, View, ScrollView, Alert, Button} from 'react-native';
+import {Text, View, ScrollView, Alert} from 'react-native';
 import {TouchableOpacity} from 'react-native';
 import {StackActions, NavigationActions} from 'react-navigation';
 import axios from 'axios';
 import Modal from 'react-native-modal';
 import styles from './screenstyle/TableInfoScreen.style';
-import {Icon, Image} from 'react-native-elements';
+import {Icon} from 'react-native-elements';
 import CardView from 'react-native-cardview';
 class TableInfoScreen extends Component {
   constructor(props) {
@@ -95,9 +95,6 @@ class TableInfoScreen extends Component {
     if (this.state.data.length !== 0) {
       return this.state.data.map(item => {
         let food = this.state.food.find(x => x.id === item.foodId);
-        let imageUri = {
-          1: require('../assets/images/canhca.jpg'),
-        };
         if (food !== undefined) {
           return (
             <CardView
@@ -134,7 +131,7 @@ class TableInfoScreen extends Component {
                 ? styles.btn_payment
                 : styles.btn_payment_d_none
             }>
-            <Icon size={55} name="cash-usd" type="material-community" />
+            <Icon size={55} name="cash" type="material-community" />
           </View>
         </TouchableOpacity>
         <Modal

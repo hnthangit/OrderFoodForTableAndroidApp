@@ -27,7 +27,7 @@ export default StyleSheet.create({
     width: 100,
     height: 100,
     alignSelf: 'center',
-    backgroundColor: 'rgb(244,67,54)',
+    // backgroundColor: 'rgb(244,67,54)',
   },
   tableImgkoconguoi: {
     width: 100,

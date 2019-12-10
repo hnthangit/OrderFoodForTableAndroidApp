@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
-import {Text, View, Animated} from 'react-native';
+import {View, Animated} from 'react-native';
 import styles from './Splash.style';
-import AsyncStorage from '@react-native-community/async-storage';
 export default class Splash extends Component {
   state = {
     logoOpacity: new Animated.Value(0),

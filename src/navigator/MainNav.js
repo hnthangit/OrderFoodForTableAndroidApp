@@ -42,10 +42,10 @@ export const MainNav = createBottomTabNavigator(
       tabBarVisible: true,
     },
     tabBarOptions: {
-      activeTintColor: '#8e0000',
-      inactiveTintColor: 'black',
+      activeTintColor: 'rgba(255,234,0 ,1)',
+      inactiveTintColor: 'white',
       style: {
-        backgroundColor: '#ffff00',
+        backgroundColor: 'rgba(33,33,33 ,1)',
       },
     },
   },
