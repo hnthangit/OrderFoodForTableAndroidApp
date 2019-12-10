@@ -16,13 +16,14 @@ class Table extends Component {
               <Image
                 // style={styles.tableImg}
                 style={
-                this.props.item.flag === 1 ? styles.tableImgconguoi : styles.tableImgkoconguoi
-              }
+                  this.props.item.flag === 1
+                    ? styles.tableImgconguoi
+                    : styles.tableImgkoconguoi
+                }
                 source={require('../../assets/images/table2.png')}
               />
             </View>
-            <View
-              >
+            <View>
               <Text style={styles.tableText}>
                 Bàn số {this.props.tableName}
               </Text>

@@ -31,7 +31,7 @@ export default StyleSheet.create({
     borderRadius: 10,
   },
   detailInfo: {
-    backgroundColor: '#f0f58c',
+    backgroundColor: '#ffffff',
     width: deviceWidth * 0.8,
     height: 140,
     position: 'absolute',

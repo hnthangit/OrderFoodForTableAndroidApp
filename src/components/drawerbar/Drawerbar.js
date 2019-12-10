@@ -44,14 +44,14 @@ class Drawbar extends Component {
               onPress={() => {
                 this.props.navigation.navigate('Index');
               }}>
-              <View style={{marginRight: 10, marginLeft: 20}}>
+              <View style={{marginRight: 10, marginLeft: 10}}>
                 <Icon name="home" size={25} color="#808080" />
               </View>
               <Text
                 style={{
                   fontSize: 15,
                 }}>
-                {'Index'}
+                {'Trang chủ'}
               </Text>
             </TouchableOpacity>
           </View>
@@ -61,7 +61,7 @@ class Drawbar extends Component {
               onPress={() => {
                 this.props.navigation.navigate('AuthorInfo');
               }}>
-              <View style={{marginRight: 10, marginLeft: 20}}>
+              <View style={{marginRight: 10, marginLeft: 10}}>
                 <Icon name="info-circle" size={25} color="#808080" />
               </View>
               <Text
@@ -97,7 +97,7 @@ class Drawbar extends Component {
                   {cancelable: false},
                 )
               }>
-              <View style={{marginRight: 10, marginLeft: 20}}>
+              <View style={{marginRight: 10, marginLeft: 10}}>
                 <Icon name="sign-out-alt" size={25} color="#808080" />
               </View>
               <Text

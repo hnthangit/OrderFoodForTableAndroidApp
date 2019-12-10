@@ -20,11 +20,10 @@ export const StackNavigator = createStackNavigator(
         headerTintColor: 'black',
         headerStyle: {
           backgroundColor: '#e0e0e0',
-          marginHorizontal: 10,
         },
         headerLeft: (
           <Icon
-            style={{marginLeft: 10,}}
+            style={{marginLeft: 10}}
             size={33}
             name="menu"
             type="meterial"
@@ -87,6 +86,9 @@ export const AuthorInfoStack = createStackNavigator(
       navigationOptions: ({navigation}) => ({
         title: 'Thông tin tác giả',
         headerTintColor: 'black',
+        headerStyle: {
+          backgroundColor: '#e0e0e0',
+        },
         headerLeft: (
           <Icon
             size={33}
@@ -169,7 +171,7 @@ export const IndexStack = createStackNavigator({
   Index: {
     screen: IndexScreen,
     navigationOptions: ({navigation}) => ({
-      title: 'Màn hình chính',
+      title: 'Trang chủ',
       headerTintColor: 'black',
       headerStyle: {
         backgroundColor: '#e0e0e0',

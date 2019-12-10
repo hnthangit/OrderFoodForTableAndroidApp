@@ -8,7 +8,7 @@ export const MainNav = createBottomTabNavigator(
     IndexScreen: {
       screen: IndexStack,
       navigationOptions: {
-        tabBarLabel: 'Màn hình bắt đầu',
+        tabBarLabel: 'Trang chủ',
         tabBarIcon: ({tintColor}) => (
           <Icon name="home" type="meterial" color={tintColor} size={24} />
         ),
@@ -46,7 +46,7 @@ export const MainNav = createBottomTabNavigator(
       inactiveTintColor: 'black',
       style: {
         backgroundColor: '#ffff00',
-      }
+      },
     },
   },
 );

@@ -6,10 +6,11 @@ export default StyleSheet.create({
   container: {
     flexDirection: 'row',
     flexWrap: 'wrap',
+    marginTop: 10,
   },
   table: {
     width: deviceWidth / 2 - 10,
     height: deviceHeight / 4 - 20,
     borderWidth: 1,
-  }
+  },
 });

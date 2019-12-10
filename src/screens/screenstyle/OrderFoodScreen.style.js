@@ -11,6 +11,7 @@ export default StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-around',
     paddingBottom: 10,
+    marginTop: 5,
   },
   //style search input
   search_input: {
@@ -21,7 +22,7 @@ export default StyleSheet.create({
   },
   //style btn Xac nhan
   search_btn: {
-    backgroundColor: '#3bfc2d',
+    backgroundColor: '#ffffff',
     width: 80,
     height: 30,
   },
@@ -38,15 +39,16 @@ export default StyleSheet.create({
     height: '90%',
   },
   modal_food: {
-    width: deviceWidth * 0.9 - 10,
+    marginLeft: 3,
+    width: deviceWidth * 0.9 - 5,
     height: 50,
-    backgroundColor: '#f0f58c',
+    backgroundColor: '#ffffff',
   },
   modal_text: {
     paddingTop: 5,
     textAlign: 'center',
     fontSize: 20,
-    color: '#f38cf5',
+    color: 'black',
   },
   //style các nút dưới modal
   touch_btn: {
