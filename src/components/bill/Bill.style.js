@@ -18,8 +18,6 @@ export default StyleSheet.create({
     height: 100,
     backgroundColor: '#f7f7f7',
     marginBottom: 20,
-    borderBottomColor: '#e8e34d',
-    borderBottomWidth: 1,
     borderRadius: 10,
   },
   bill_sum: {

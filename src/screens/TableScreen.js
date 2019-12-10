@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Text, View, ScrollView} from 'react-native';
+import {Text, View, ScrollView, Image} from 'react-native';
 import Table from '../components/table/Table';
 import axios from 'axios';
 import styles from './screenstyle/TableScreen.style';
@@ -43,6 +43,7 @@ class TableScreen extends Component {
       return this.state.tableData.map(item => {
         return (
           <Table
+            styles={{width: '50%'}}
             navigation={this.props.navigation}
             key={item.id}
             item={item}
@@ -55,10 +56,11 @@ class TableScreen extends Component {
 
   render() {
     return (
-      <View style={styles.container}>
+      <View>
+        {/* </View> */}
         {/* <Text>TableScreen</Text> */}
         <ScrollView>
-          <View style={styles.view}>{this.renderTableItem()}</View>
+          <View style={styles.container}>{this.renderTableItem()}</View>
         </ScrollView>
       </View>
     );

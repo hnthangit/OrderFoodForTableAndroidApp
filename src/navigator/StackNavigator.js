@@ -17,9 +17,14 @@ export const StackNavigator = createStackNavigator(
       screen: TableScreen,
       navigationOptions: ({navigation}) => ({
         title: 'Bàn',
-        headerTintColor: 'blue',
+        headerTintColor: 'black',
+        headerStyle: {
+          backgroundColor: '#e0e0e0',
+          marginHorizontal: 10,
+        },
         headerLeft: (
           <Icon
+            style={{marginLeft: 10,}}
             size={33}
             name="menu"
             type="meterial"
@@ -50,8 +55,11 @@ export const StackNavigator = createStackNavigator(
     OrderFood: {
       screen: BottomTabNavigator,
       navigationOptions: {
-        headerTintColor: 'blue',
+        headerTintColor: 'black',
         title: 'Thông tin bàn',
+        headerStyle: {
+          backgroundColor: '#e0e0e0',
+        },
       },
     },
   },
@@ -78,7 +86,7 @@ export const AuthorInfoStack = createStackNavigator(
       screen: AuthorInfoScreen,
       navigationOptions: ({navigation}) => ({
         title: 'Thông tin tác giả',
-        headerTintColor: 'blue',
+        headerTintColor: 'black',
         headerLeft: (
           <Icon
             size={33}
@@ -101,7 +109,10 @@ export const BillHistoryStack = createStackNavigator({
     screen: BillHistoryScreen,
     navigationOptions: ({navigation}) => ({
       title: 'Lịch sử hóa đơn',
-      headerTintColor: 'blue',
+      headerTintColor: 'black',
+      headerStyle: {
+        backgroundColor: '#e0e0e0',
+      },
       headerLeft: (
         <Icon
           size={33}
@@ -134,8 +145,11 @@ export const BillHistoryStack = createStackNavigator({
     screen: BillInfoScreen,
     navigationOptions: ({navigation}) => ({
       title: 'Chi tiết hóa đơn',
-      headerTintColor: 'blue',
+      headerTintColor: 'black',
       tabBarVisible: false,
+      headerStyle: {
+        backgroundColor: '#e0e0e0',
+      },
     }),
   },
 });
@@ -156,7 +170,10 @@ export const IndexStack = createStackNavigator({
     screen: IndexScreen,
     navigationOptions: ({navigation}) => ({
       title: 'Màn hình chính',
-      headerTintColor: 'blue',
+      headerTintColor: 'black',
+      headerStyle: {
+        backgroundColor: '#e0e0e0',
+      },
       headerLeft: (
         <Icon
           size={33}

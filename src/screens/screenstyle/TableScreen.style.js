@@ -1,21 +1,15 @@
 import {StyleSheet} from 'react-native';
 import {Dimensions} from 'react-native';
 var deviceWidth = Dimensions.get('window').width;
+var deviceHeight = Dimensions.get('window').height;
 export default StyleSheet.create({
   container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    // backgroundColor: 'green',
     flexDirection: 'row',
-    width: deviceWidth,
+    flexWrap: 'wrap',
   },
-  // view: {
-  //   width: 200,
-  //   backgroundColor: 'white',
-  // },
-  // view: {
-  //   width: deviceWidth / 2 - 15,
-  //   height: 500,
-  // },
+  table: {
+    width: deviceWidth / 2 - 10,
+    height: deviceHeight / 4 - 20,
+    borderWidth: 1,
+  }
 });
