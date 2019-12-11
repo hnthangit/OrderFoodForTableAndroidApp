@@ -69,7 +69,7 @@ class BillInfoScreen extends Component {
   };
   render() {
     return (
-      <View style={{display: 'flex', flex: 1}}>
+      <View style={styles.container}>
         <View style={styles.bill_info_top}>
           <Text style={styles.bill_info_top_left}>
             {'  '}
@@ -88,22 +88,13 @@ class BillInfoScreen extends Component {
             type="material-community"
           />
         </View>
-        
         <ScrollView>{this.renderBillInfo()}</ScrollView>
         <View style={styles.text_in_total}>
           <Text style={styles.text_in_total_a}>Tổng cộng</Text>
           <Text style={styles.text_in_total_b}>
-            {this.state.billInfo.totalPayment}
+            {this.state.billInfo.totalPayment}{'\u20AB'}
           </Text>
         </View>
-        {/* <Text style={{color: 'red', fontSize: 50}}>
-          Tổng tiền: {this.state.billInfo.totalPayment}
-        </Text> */}
-        {/* <View style={styles.text_in_total}>
-          <Text style={styles.text_in_total_a}>{'  '}Tổng tạm tính</Text>
-          <Text style={styles.text_in_total_b}>{'  '}Khuyến mãi</Text>
-        </View> */}
-        
       </View>
     );
   }

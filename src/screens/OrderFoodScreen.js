@@ -3,7 +3,6 @@ import {
   Text,
   View,
   ScrollView,
-  Button,
   TextInput,
   Alert,
   TouchableOpacity,
@@ -15,7 +14,7 @@ import Food from '../components/food/Food';
 import styles from '../screens/screenstyle/OrderFoodScreen.style';
 import axios from 'axios';
 import CardView from 'react-native-cardview';
-import {Icon} from 'react-native-elements';
+import {Button} from 'react-native-elements';
 class OrderFoodScreen extends Component {
   constructor(props) {
     super(props);
@@ -270,15 +269,29 @@ class OrderFoodScreen extends Component {
             </ScrollView>
             <View style={styles.touch_btn}>
               <TouchableOpacity style={styles.touch_btn_select_all}>
-                <Button onPress={this.resetFood} title="Chọn lại hết" />
+                <Button
+                  buttonStyle={styles.btn_btn_style}
+                  titleStyle={styles.btn_title_style}
+                  onPress={this.resetFood}
+                  title="Chọn lại hết"
+                  type="clear"
+                />
               </TouchableOpacity>
               <View style={styles.touch_btn_close_order}>
-                <TouchableOpacity>
-                  <Button onPress={this.setModalVisible} title="Đóng" />
-                </TouchableOpacity>
-                <TouchableOpacity>
-                  <Button onPress={this.orderFoodItem} title="Gọi món" />
-                </TouchableOpacity>
+                <Button
+                  buttonStyle={styles.btn_btn_style}
+                  titleStyle={styles.btn_title_style}
+                  onPress={this.setModalVisible}
+                  type="outline"
+                  title="Đóng"
+                />
+                <Button
+                  buttonStyle={styles.btn_btn_style}
+                  titleStyle={styles.btn_title_style}
+                  onPress={this.orderFoodItem}
+                  title="Gọi món"
+                  type="clear"
+                />
               </View>
             </View>
           </View>
@@ -299,7 +312,7 @@ class OrderFoodScreen extends Component {
             <Text style={styles.search_text}>Xác nhận</Text>
           </TouchableOpacity>
         </View>
-        <View style={{overflow: 'visible', marginBottom: 100,}}>
+        <View style={{overflow: 'visible', marginBottom: 100}}>
           <ScrollView>{this.renderFoodItem(foodArray)}</ScrollView>
         </View>
       </View>

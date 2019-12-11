@@ -2,13 +2,13 @@ import {StyleSheet} from 'react-native';
 import {Dimensions} from 'react-native';
 
 var deviceWidth = Dimensions.get('window').width;
+var deviceHeight = Dimensions.get('window').height;
 export default StyleSheet.create({
   container: {
-    display: 'flex',
     flex: 1,
-    flexDirection: 'column',
-    alignItems: 'center',
-    justifyContent: 'center',
+    display: 'flex',
+    width: deviceWidth,
+    height: deviceHeight,
   },
   food: {
     display: 'flex',

@@ -157,7 +157,7 @@ class Login extends Component {
 
               <View style={styles.TextView}>
                 <Text style={styles.TextViewTitle}>
-                  fee and always will be !
+                  paid and always will be !
                 </Text>
               </View>
             </View>

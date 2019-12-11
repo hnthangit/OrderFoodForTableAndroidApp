@@ -50,7 +50,7 @@ export default StyleSheet.create({
   empty_text: {
     marginTop: deviceWidth / 1.5,
     fontSize: 30,
-    color: '#cad4b4',
+    color: '#bdbdbd',
   },
   cardview: {
     backgroundColor: '#f0f58c',

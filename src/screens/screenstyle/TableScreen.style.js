@@ -7,6 +7,8 @@ export default StyleSheet.create({
     flexDirection: 'row',
     flexWrap: 'wrap',
     marginTop: 10,
+    alignItems: 'center',
+    justifyContent: 'center',
   },
   table: {
     width: deviceWidth / 2 - 10,
