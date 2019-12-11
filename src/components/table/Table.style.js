@@ -13,25 +13,14 @@ export default StyleSheet.create({
     width: deviceWidth / 2 - 10,
     height: deviceHeight / 4 - 70,
   },
-  tableImg: {
-    width: 100,
-    height: 100,
-    alignSelf: 'center',
-    borderColor: 'rgb(244,67,54)',
-    borderWidth: 2,
-  },
   tableText: {
     textAlign: 'center',
   },
-  tableImgconguoi: {
-    width: 100,
-    height: 100,
-    alignSelf: 'center',
-    // backgroundColor: 'rgb(244,67,54)',
-  },
-  tableImgkoconguoi: {
-    width: 100,
-    height: 100,
+  tableImg: {
+    width: deviceWidth / 4,
+    height: deviceHeight / 10,
+    // height: deviceHeight /2,
+    resizeMode: 'contain',
     alignSelf: 'center',
   },
 });

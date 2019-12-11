@@ -7,20 +7,6 @@ export default StyleSheet.create({
   btn_payment_d_none: {
     display: 'none',
   },
-  btn_payment: {
-    alignSelf: 'center',
-    display: 'flex',
-    borderRadius:
-      Math.round(deviceWidth + Dimensions.get('window').height) / 10,
-    width: deviceWidth * 0.2,
-    height: deviceWidth * 0.2,
-    justifyContent: 'center',
-    alignItems: 'center',
-    marginLeft: deviceWidth - 100,
-    backgroundColor: 'rgba(255,234,0 ,1)',
-    borderWidth: 15,
-    borderColor: 'white',
-  },
   modal_alert_payment: {
     alignItems: 'center',
     justifyContent: 'center',
@@ -38,7 +24,7 @@ export default StyleSheet.create({
   btn: {
     marginRight: 20,
     paddingTop: 12.5,
-    backgroundColor: '#14e0da',
+    backgroundColor: 'rgba(33,33,33 ,1)',
     width: 70,
     height: 50,
     alignItems: 'center',
@@ -52,7 +38,7 @@ export default StyleSheet.create({
   },
   //style text alert
   textAlert: {
-    fontSize: 20,
+    textAlign: 'center',
   },
   //style empty tabel
   empty: {
@@ -68,5 +54,6 @@ export default StyleSheet.create({
   },
   cardview: {
     backgroundColor: '#f0f58c',
+    margin: 10,
   },
 });

@@ -69,15 +69,15 @@ class Food extends Component {
     return (
       <View style={styles.container}>
         <View style={styles.detail}>
-          <CardView
+          <View
             style={styles.detailInfo}
-            cardElevation={15}
+            cardElevation={0}
             cardMaxElevation={5}
             cornerRadius={5}>
             <Text style={styles.detailText}>{this.props.item.name} </Text>
             <Text style={styles.detailText}>{this.props.item.price} VNĐ</Text>
-            <Star score={5} style={styles.starStyle} />
-          </CardView>
+            {/* <Star score={5} style={styles.starStyle} /> */}
+          </View>
           <View style={styles.detailImg}>
             <Image
               style={styles.detailImage}

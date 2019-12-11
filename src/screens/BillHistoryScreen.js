@@ -47,7 +47,6 @@ class BillHistoryScreen extends Component {
   render() {
     return (
       <View style={styles.container}>
-        {/* <Text>Bill History Screen</Text> */}
         <ScrollView>
           {this.renderBillItem()}
           <Text style={styles.text_end}>Bạn đã xem hết các hóa đơn</Text>

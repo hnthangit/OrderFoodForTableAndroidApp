@@ -7,21 +7,22 @@ export default StyleSheet.create({
   container: {
     flex: 1,
     height: 150,
+    // marginBottom: 100,
   },
   detail: {
     display: 'flex',
     flexDirection: 'row',
     padding: 20,
-    // margin: 10,
     marginBottom: -10,
     width: deviceWidth,
     alignItems: 'center',
     justifyContent: 'center',
+    // borderWidth: 1,
   },
   detailImg: {
     backgroundColor: '#ffffff',
-    width: 100,
-    height: 100,
+    width: '10%',
+    height: '10%',
     position: 'absolute',
     marginTop: 20,
     top: 10,
@@ -29,6 +30,7 @@ export default StyleSheet.create({
     bottom: 0,
     left: deviceWidth / 20,
     borderRadius: 10,
+    // elevation: 10,
   },
   detailInfo: {
     backgroundColor: '#ffffff',
@@ -39,6 +41,7 @@ export default StyleSheet.create({
     borderWidth: 1,
     borderRadius: 10,
     shadowColor: 'grey',
+    borderColor: '#e0e0e0',
   },
   detailQua: {
     backgroundColor: '#ffffff',
@@ -54,8 +57,9 @@ export default StyleSheet.create({
   },
   detailText: {
     textAlign: 'center',
-    margin: 10,
-    padding: 2,
+    paddingLeft: '30%',
+    paddingRight: '20%',
+    paddingTop: '10%',
   },
   detailImage: {
     width: 100,

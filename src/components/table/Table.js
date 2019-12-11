@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {Text, View, TouchableHighlight, Image} from 'react-native';
 import styles from './Table.style';
+import ImageResizeMode from 'react-native/Libraries/Image/ImageResizeMode';
 class Table extends Component {
   render() {
     return (
@@ -14,12 +15,9 @@ class Table extends Component {
           <View on style={styles.table}>
             <View>
               <Image
+                resizeMode={ImageResizeMode.contain}
                 // style={styles.tableImg}
-                style={
-                  this.props.item.flag === 1
-                    ? styles.tableImgconguoi
-                    : styles.tableImgkoconguoi
-                }
+                style={styles.tableImg}
                 source={
                   this.props.item.flag === 0
                     ? require('../../assets/images/table.png')

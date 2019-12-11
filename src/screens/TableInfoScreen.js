@@ -7,6 +7,8 @@ import Modal from 'react-native-modal';
 import styles from './screenstyle/TableInfoScreen.style';
 import {Icon} from 'react-native-elements';
 import CardView from 'react-native-cardview';
+import ActionButton from 'react-native-action-button';
+import FloatingActionButton from 'react-native-floating-action-button';
 class TableInfoScreen extends Component {
   constructor(props) {
     super(props);
@@ -124,16 +126,29 @@ class TableInfoScreen extends Component {
     return (
       <View style={styles.food_table}>
         <ScrollView>{this.renderTableInfo()}</ScrollView>
-        <TouchableOpacity onPress={this.setModalVisible}>
+        {/* <TouchableOpacity onPress={this.setModalVisible}>
           <View
             style={
               this.state.data.length !== 0
                 ? styles.btn_payment
                 : styles.btn_payment_d_none
             }>
-            <Icon size={55} name="cash" type="material-community" />
+
           </View>
-        </TouchableOpacity>
+        </TouchableOpacity> */}
+        <ActionButton
+          buttonColor="#f1f8e9"
+          onPress={this.setModalVisible}
+          //tiểu xảo
+          size={this.state.data.length !== 0 ? 60 : 0}
+          renderIcon={active =>
+            active ? (
+              <Icon size={50} name="cash" type="material-community" />
+            ) : (
+              <Icon size={50} name="cash" type="material-community" />
+            )
+          }
+        />
         <Modal
           onBackButtonPress={this.setModalVisible}
           isVisible={this.state.modalVisible}
@@ -144,13 +159,13 @@ class TableInfoScreen extends Component {
             </Text>
             <View style={styles.modal_alert_payment_btn}>
               <TouchableOpacity style={styles.btn} onPress={this.payment}>
-                <Text>OK</Text>
+                <Text style={{color: 'rgba(255,234,0 ,1)'}}>OK</Text>
               </TouchableOpacity>
 
               <TouchableOpacity
                 style={styles.btn}
                 onPress={this.setModalVisible}>
-                <Text>Hủy</Text>
+                <Text style={{color: 'rgba(255,234,0 ,1)'}}>Hủy</Text>
               </TouchableOpacity>
             </View>
           </View>

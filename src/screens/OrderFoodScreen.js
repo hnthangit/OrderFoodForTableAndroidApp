@@ -284,7 +284,6 @@ class OrderFoodScreen extends Component {
           </View>
         </Modal>
         <View style={styles.search}>
-          <Icon size={20} name="close" type="material-community" />
           <TextInput
             style={styles.search_input}
             value={this.state.search}
@@ -300,7 +299,9 @@ class OrderFoodScreen extends Component {
             <Text style={styles.search_text}>Xác nhận</Text>
           </TouchableOpacity>
         </View>
-        <ScrollView>{this.renderFoodItem(foodArray)}</ScrollView>
+        <View style={{overflow: 'visible', marginBottom: 100,}}>
+          <ScrollView>{this.renderFoodItem(foodArray)}</ScrollView>
+        </View>
       </View>
     );
   }
