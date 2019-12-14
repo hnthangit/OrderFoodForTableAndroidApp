@@ -35,11 +35,14 @@ cd OrderFoodForTableAndroidApp
 npm react-native start
 npm react-native run-android
 ```
-Or you can see **NPM SCRIPTS** on left bar and click > android
+Or you can see **NPM SCRIPTS** on left bar and click 
+> android
+
 ### iOS
 Similar as Android but try
 ```
 npm react-native start
 npm react-native run-ios
 ```
-Or you can see **NPM SCRIPTS** on left bar and click > ios
+Or you can see **NPM SCRIPTS** on left bar and click 
+> ios
