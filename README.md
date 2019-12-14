@@ -1,12 +1,8 @@
 # OrderFoodForTableAndroidApp
 write some things about app here.
 
-![Splash Screen](./src/assets/images/splashscreen.PNG "Splash Screen")
-![Main Menu Screen](./src/assets/images/mainmenuscreen.PNG "Main Menu Screen")
-![Table Screen](./src/assets/images/tablescreen.PNG "Table Screen")
-![Order Food Screen](./src/assets/images/orderfoodscreen.PNG "Order Food Screen")
-![Bill History Screen](./src/assets/images/billhistoryscreen.PNG "Bill History Screen")
-![Bill Info Screen](./src/assets/images/billinfoscreen.PNG "Bill Info Screen")
+![Three First Screen](https://user-images.githubusercontent.com/49482201/70845850-1b424400-1e86-11ea-961a-c76221c78a95.png)
+![Last Screen](https://user-images.githubusercontent.com/49482201/70845913-c226e000-1e86-11ea-93dd-47dd106a18bf.png)
 
 ### iOS
 In the root directory
