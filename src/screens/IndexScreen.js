@@ -38,7 +38,7 @@ class IndexScreen extends Component {
                   bottom: 0,
                   fontSize: 30,
                   color: 'rgba(255,234,0 ,1)',
-                  backgroundColor: 'rgba(219, 212, 191,0.5)',
+                  backgroundColor: 'rgba(33,33,33 ,0.7)',
                   fontWeight: 'bold',
                 }}>
                 Thức ăn ngon
@@ -58,7 +58,7 @@ class IndexScreen extends Component {
                   bottom: 0,
                   fontSize: 30,
                   color: 'rgba(255,234,0 ,1)',
-                  backgroundColor: 'rgba(219, 212, 191,0.5)',
+                  backgroundColor: 'rgba(33,33,33 ,0.7)',
                   fontWeight: 'bold',
                 }}>
                 Thức ăn ngon
@@ -78,7 +78,7 @@ class IndexScreen extends Component {
                   bottom: 0,
                   fontSize: 30,
                   color: 'rgba(255,234,0 ,1)',
-                  backgroundColor: 'rgba(219, 212, 191,0.5)',
+                  backgroundColor: 'rgba(33,33,33 ,0.7)',
                   fontWeight: 'bold',
                 }}>
                 Thức ăn ngon
