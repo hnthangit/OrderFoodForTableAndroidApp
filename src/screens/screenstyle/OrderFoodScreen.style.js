@@ -76,8 +76,6 @@ export default StyleSheet.create({
   },
   btn_btn_style: {
     backgroundColor: 'rgba(33,33,33 ,1)',
-    width: 110,
-    height: 50,
   },
   btn_title_style: {
     color: 'rgba(255,234,0 ,1)',

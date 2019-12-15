@@ -14,7 +14,7 @@ class Drawbar extends Component {
     super();
     //Setting up the Main Top Large Image of the Custom Sidebar
     this.proileImage =
-      'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png';
+      'https://cdn3.iconfinder.com/data/icons/careers-women-2/64/catering-service-waitress-restaurant-employee-512.png';
     //Array of the sidebar navigation option with icon and screen to navigate
     //This screens can be any screen defined in Drawer Navigator in App.js
     //You can find the Icons from here https://material.io/tools/icons/

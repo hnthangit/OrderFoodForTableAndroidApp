@@ -92,7 +92,7 @@ class Login extends Component {
                 rounded
                 source={{
                   uri:
-                    'https://scontent.fhan2-1.fna.fbcdn.net/v/t1.0-9/45046244_1161256877359163_3375469404140601344_n.jpg?_nc_cat=103&_nc_oc=AQlzmBTRTnbvXa8C3JcDzCl6ZRx_2Xlxe_jj-a4y__tnvN5Jq1vAZ9-P-2y4AssaP_8&_nc_ht=scontent.fhan2-1.fna&oh=1ebe1632e6ace45d70756e0963417a6d&oe=5E4A60F7',
+                    'https://st2.depositphotos.com/3577609/11841/v/950/depositphotos_118413936-stock-illustration-restaurant-logo-design.jpg',
                 }}
               />
             </View>

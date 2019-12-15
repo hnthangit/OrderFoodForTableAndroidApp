@@ -8,82 +8,97 @@ class IndexScreen extends Component {
   render() {
     return (
       <ScrollView>
-        <View style={styles.container}>
-          {/* <Text>Đây là trang chủ</Text> */}
-          <View>
-            <Card
-              // flex
-              borderless
-              style={styles.card}
-              title="Restaurant App"
-              // caption="139 minutes ago"
-              location="123 Nguyễn Huệ, Huế City"
-              avatar="https://scontent.fhan2-4.fna.fbcdn.net/v/t1.0-9/45046244_1161256877359163_3375469404140601344_n.jpg?_nc_cat=103&_nc_ohc=aHb1WDRNoR8AQnRfcHo_tOws2uFMAhdfmxKm4ewmj4S_aAKaco7c2ksWQ&_nc_ht=scontent.fhan2-4.fna&oh=4cf4a41675e98854fbb8c2186507ee27&oe=5E71EDF7"
-              imageStyle={styles.cardImageRadius}
-              imageBlockStyle={{padding: theme.SIZES.BASE / 2}}
-              image="https://img.freepik.com/free-vector/hnad-drawn-fast-food-background_52683-16127.jpg?size=626&ext=jpg"
-            />
-          </View>
-          
-          <View style={{width: 600, height: 200}}>
-            <View>
-              <Image
-                style={{width: 600, height: 200}}
-                source={require('../assets/images/foodnew.jpg')}
-              />
-              <Text
-                style={{
-                  position: 'absolute',
-                  left: 0,
-                  bottom: 0,
-                  fontSize: 30,
-                  color: 'rgba(255,234,0 ,1)',
-                  backgroundColor: 'rgba(33,33,33 ,0.7)',
-                  fontWeight: 'bold',
-                }}>
-                Thức ăn ngon
-              </Text>
+        <View style={{backgroundColor: '#f1f8e9'}}>
+          <View style={styles.card}>
+            <View style={styles.view_card}>
+              <View style={{marginRight: 5}}>
+                <Image
+                  style={styles.image}
+                  source={require('../assets/images/comtrang.jpg')}
+                />
+              </View>
+              <View>
+                <Text style={styles.text}>Cơm trắng</Text>
+              </View>
             </View>
-          </View>
-          <View style={{width: 600, height: 200}}>
-            <View>
-              <Image
-                style={{width: 600, height: 200}}
-                source={require('../assets/images/rauqua.jpg')}
-              />
-              <Text
-                style={{
-                  position: 'absolute',
-                  left: 0,
-                  bottom: 0,
-                  fontSize: 30,
-                  color: 'rgba(255,234,0 ,1)',
-                  backgroundColor: 'rgba(33,33,33 ,0.7)',
-                  fontWeight: 'bold',
-                }}>
-                Thức ăn ngon
-              </Text>
+            <View style={styles.view_card}>
+              <View>
+                <Image
+                  style={styles.image}
+                  source={require('../assets/images/bunbo.jpg')}
+                />
+              </View>
+              <View>
+                <Text style={styles.text}>Bún bò Huế</Text>
+              </View>
             </View>
-          </View>
-          <View style={{width: 600, height: 200}}>
-            <View>
-              <Image
-                style={{width: 600, height: 200}}
-                source={require('../assets/images/cakebt.png')}
-              />
-              <Text
-                style={{
-                  position: 'absolute',
-                  left: 0,
-                  bottom: 0,
-                  fontSize: 30,
-                  color: 'rgba(255,234,0 ,1)',
-                  backgroundColor: 'rgba(33,33,33 ,0.7)',
-                  fontWeight: 'bold',
-                }}>
-                Thức ăn ngon
-              </Text>
+            <View style={styles.view_card}>
+              <View>
+                <Image
+                  style={styles.image}
+                  source={require('../assets/images/cachep.jpg')}
+                />
+              </View>
+              <View>
+                <Text style={styles.text}>Cá chép chiên giòn</Text>
+              </View>
             </View>
+            <View style={styles.view_card}>
+              <View>
+                <Image
+                  style={styles.image}
+                  source={require('../assets/images/canhca.jpg')}
+                />
+              </View>
+              <View>
+                <Text style={styles.text}>Canh cá</Text>
+              </View>
+            </View>
+            <View style={styles.view_card}>
+              <View>
+                <Image
+                  style={styles.image}
+                  source={require('../assets/images/galuoc.jpg')}
+                />
+              </View>
+              <View>
+                <Text style={styles.text}>Gà luộc</Text>
+              </View>
+            </View>
+            <View style={styles.view_card}>
+              <View>
+                <Image
+                  style={styles.image}
+                  source={require('../assets/images/raumuongluoc.jpg')}
+                />
+              </View>
+              <View>
+                <Text style={styles.text}>Rau muống luộc</Text>
+              </View>
+            </View>
+            <View style={styles.view_card}>
+              <View>
+                <Image
+                  style={styles.image}
+                  source={require('../assets/images/thitkhotrung.jpg')}
+                />
+              </View>
+              <View>
+                <Text style={styles.text}>Thịt kho trứng</Text>
+              </View>
+            </View>
+            <View style={styles.view_card}>
+              <View>
+                <Image
+                  style={styles.image}
+                  source={require('../assets/images/tom.jpg')}
+                />
+              </View>
+              <View>
+                <Text style={styles.text}>Tôm chiên xù</Text>
+              </View>
+            </View>
+            {/* <Text>abc</Text> */}
           </View>
         </View>
       </ScrollView>
