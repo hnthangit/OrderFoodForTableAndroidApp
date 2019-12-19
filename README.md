@@ -16,7 +16,7 @@
 
 ## Setup instructions
 * Editor, ex: [Visual Studio Code](https://code.visualstudio.com/)
-* Next
+* 
 ```
 git clone https://github.com/lylinsunshine/OrderFoodForTableAndroidApp.git
 cd OrderFoodForTableAndroidApp
