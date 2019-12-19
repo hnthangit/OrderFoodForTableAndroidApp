@@ -1,3 +1,7 @@
+
+# Server Side
+https://github.com/Hung1610/RestaurentAndroidApp-Backend-.NET-Core
+
 # OrderFoodForTableAndroidApp
 
 ![Three First Screen](https://user-images.githubusercontent.com/49482201/71168625-c178ba00-2289-11ea-8899-67267a2a9f13.png?fbclid=IwAR30JZbX37cdVCAmEw8rQ-S6MVoIffRwxr3y23iEqRkaG6Dp1o5-XGnYlEw)
@@ -45,4 +49,3 @@ npm react-native run-ios
 Or run **NPM SCRIPTS** from package.json:
 > ios
 
-Server Side: https://github.com/Hung1610/RestaurentAndroidApp-Backend-.NET-Core
