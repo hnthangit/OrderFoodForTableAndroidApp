@@ -46,3 +46,5 @@ npm react-native run-ios
 ```
 Or you can see **NPM SCRIPTS** on left bar and click 
 > ios
+
+Server Side: https://github.com/Hung1610/RestaurentAndroidApp-Backend-.NET-Core
