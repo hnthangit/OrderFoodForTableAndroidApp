@@ -49,3 +49,5 @@ npm react-native run-ios
 Or run **NPM SCRIPTS** from package.json:
 > ios
 
+Wow, best app
+test pr 2nd
